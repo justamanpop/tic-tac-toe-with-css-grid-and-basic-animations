@@ -1,0 +1,32 @@
+.gameStatusMessage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  font-size: 55px;
+
+  align-self: center;
+}
+
+.playerX {
+  grid-column: 5 / 6;
+  justify-self: flex-end;
+}
+
+.playerO {
+  grid-column: 7 / 8;
+  justify-self: flex-start;
+}
+
+.currPlayer {
+  background-color: black;
+  color: white;
+
+  border-radius: 50%;
+
+  text-align: center;
+
+  height: 1.2em;
+  width: 1.2em;
+
+  box-shadow: 0 0 5px 5px black;
+}

@@ -1,0 +1,240 @@
+.ticTacToeBoard {
+  display: grid;
+
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.ticTacToeSquare1,
+.ticTacToeSquare2,
+.ticTacToeSquare3,
+.ticTacToeSquare4,
+.ticTacToeSquare5,
+.ticTacToeSquare6,
+.ticTacToeSquare7,
+.ticTacToeSquare8,
+.ticTacToeSquare9 {
+  display: flex;
+
+  justify-content: center;
+  align-content: center;
+
+  font-size: 55px;
+  font-family: "Mochiy Pop One", sans-serif;
+
+  text-shadow: 3px 3px 3px;
+
+  cursor: pointer;
+  /* border-color: lightblue; */
+}
+
+.ticTacToeSquare1,
+.ticTacToeSquare2 {
+  grid-row-start: 2;
+
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: 0px 5px 5px 0px;
+
+  box-shadow: 0 0 5px;
+  clip-path: inset(0px -15px -15px 0px);
+}
+
+.ticTacToeSquare1 {
+  grid-column-start: 5;
+}
+.ticTacToeSquare2 {
+  grid-column-start: 6;
+}
+.ticTacToeSquare3 {
+  grid-column-start: 7;
+  grid-row-start: 2;
+
+  border-bottom-style: solid;
+  border-width: 0px 0px 5px 0px;
+
+  box-shadow: 0 0 5px;
+  clip-path: inset(0px 0px -15px 0px);
+}
+
+.ticTacToeSquare4,
+.ticTacToeSquare5 {
+  grid-row-start: 3;
+
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: 0px 5px 5px 0px;
+
+  box-shadow: 0 0 5px;
+  clip-path: inset(0px -15px -15px 0px);
+}
+
+.ticTacToeSquare4 {
+  grid-column-start: 5;
+}
+.ticTacToeSquare5 {
+  grid-column-start: 6;
+}
+.ticTacToeSquare6 {
+  grid-column-start: 7;
+  grid-row-start: 3;
+
+  border-bottom-style: solid;
+  border-width: 0px 0px 5px 0px;
+
+  box-shadow: 0 0 5px;
+  clip-path: inset(0px 0px -15px 0px);
+}
+
+.ticTacToeSquare7,
+.ticTacToeSquare8 {
+  grid-row-start: 4;
+
+  border-right-style: solid;
+  border-width: 0px 5px 0px 0px;
+
+  box-shadow: 0 0 5px;
+  clip-path: inset(0px -15px 0px 0px);
+}
+
+.ticTacToeSquare7 {
+  grid-column-start: 5;
+}
+.ticTacToeSquare8 {
+  grid-column-start: 6;
+}
+.ticTacToeSquare9 {
+  grid-column-start: 7;
+  grid-row-start: 4;
+}
+
+/* X's that will remain hidden till you click on board, wherein they will become visible and move into position*/
+.moveLeft {
+  transition: transform 1s;
+  transform: translateX(-9.2em);
+}
+
+.hiddenX1,
+.hiddenX2,
+.hiddenX3,
+.hiddenX4,
+.hiddenX5,
+.hiddenX6,
+.hiddenX7,
+.hiddenX8,
+.hiddenX9 {
+  justify-self: center;
+  align-self: center;
+
+  font-size: 55px;
+  font-family: "Mochiy Pop One", sans-serif;
+
+  text-shadow: 3px 3px 3px;
+
+  visibility: hidden;
+}
+
+.hiddenX1 {
+  grid-row-start: 2;
+  grid-column: 1 / 2;
+}
+
+.hiddenX2 {
+  grid-row-start: 2;
+  grid-column: 10 / 11;
+}
+.hiddenX3 {
+  grid-row-start: 2;
+  grid-column: 11 / 12;
+}
+
+.hiddenX4 {
+  grid-row-start: 3;
+  grid-column: 1 / 2;
+}
+.hiddenX5 {
+  grid-row-start: 3;
+  grid-column: 10 / 11;
+}
+.hiddenX6 {
+  grid-row-start: 3;
+  grid-column: 11 / 12;
+}
+
+.hiddenX7 {
+  grid-row-start: 4;
+  grid-column: 1 / 2;
+}
+.hiddenX8 {
+  grid-row-start: 4;
+  grid-column: 10 / 11;
+}
+.hiddenX9 {
+  grid-row-start: 4;
+  grid-column: 11 / 12;
+}
+
+/* O's that will remain hidden till you click on board, wherein they will become visible and move into position*/
+.moveRight {
+  transition: transform 1s;
+  transform: translateX(9.2em);
+}
+
+.hiddenO1,
+.hiddenO2,
+.hiddenO3,
+.hiddenO4,
+.hiddenO5,
+.hiddenO6,
+.hiddenO7,
+.hiddenO8,
+.hiddenO9 {
+  justify-self: center;
+  align-self: center;
+
+  font-size: 55px;
+  font-family: "Mochiy Pop One", sans-serif;
+
+  text-shadow: 3px 3px 3px;
+
+  visibility: hidden;
+}
+
+.hiddenO1 {
+  grid-row-start: 2;
+  grid-column: 1 / 2;
+}
+.hiddenO2 {
+  grid-row-start: 2;
+  grid-column: 2 / 3;
+}
+.hiddenO3 {
+  grid-row-start: 2;
+  grid-column: 11 / 12;
+}
+
+.hiddenO4 {
+  grid-row-start: 3;
+  grid-column: 1 / 2;
+}
+.hiddenO5 {
+  grid-row-start: 3;
+  grid-column: 2 / 3;
+}
+.hiddenO6 {
+  grid-row-start: 3;
+  grid-column: 11 / 12;
+}
+
+.hiddenO7 {
+  grid-row-start: 4;
+  grid-column: 1 / 2;
+}
+.hiddenO8 {
+  grid-row-start: 4;
+  grid-column: 2 / 3;
+}
+.hiddenO9 {
+  grid-row-start: 4;
+  grid-column: 11 / 12;
+}

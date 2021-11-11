@@ -7,19 +7,49 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/ticTacToeBoard.css" />
+    <link rel="stylesheet" href="./styles/statusDisplay.css" />
+
+    <script src="./index.js"></script>
   </head>
   <body>
     <h1 class="heading">Tic Tac Toe</h1>
     <div class="ticTacToeBoard">
-      <div class="ticTacToeSquare1">1</div>
-      <div class="ticTacToeSquare2">2</div>
-      <div class="ticTacToeSquare3">X</div>
-      <div class="ticTacToeSquare4">O</div>
-      <div class="ticTacToeSquare5">5</div>
-      <div class="ticTacToeSquare6">6</div>
-      <div class="ticTacToeSquare7">7</div>
-      <div class="ticTacToeSquare8">8</div>
-      <div class="ticTacToeSquare9">9</div>
+      <div class="ticTacToeSquare1" onclick="tileClicked(1)"></div>
+      <div class="ticTacToeSquare2" onclick="tileClicked(2)"></div>
+      <div class="ticTacToeSquare3" onclick="tileClicked(3)"></div>
+      <div class="ticTacToeSquare4" onclick="tileClicked(4)"></div>
+      <div class="ticTacToeSquare5" onclick="tileClicked(5)"></div>
+      <div class="ticTacToeSquare6" onclick="tileClicked(6)"></div>
+      <div class="ticTacToeSquare7" onclick="tileClicked(7)"></div>
+      <div class="ticTacToeSquare8" onclick="tileClicked(8)"></div>
+      <div class="ticTacToeSquare9" onclick="tileClicked(9)"></div>
+
+      <div class="hiddenX1">X</div>
+      <div class="hiddenX2">X</div>
+      <div class="hiddenX3">X</div>
+      <div class="hiddenX4">X</div>
+      <div class="hiddenX5">X</div>
+      <div class="hiddenX6">X</div>
+      <div class="hiddenX7">X</div>
+      <div class="hiddenX8">X</div>
+      <div class="hiddenX9">X</div>
+
+      <div class="hiddenO1">O</div>
+      <div class="hiddenO2">O</div>
+      <div class="hiddenO3">O</div>
+      <div class="hiddenO4">O</div>
+      <div class="hiddenO5">O</div>
+      <div class="hiddenO6">O</div>
+      <div class="hiddenO7">O</div>
+      <div class="hiddenO8">O</div>
+      <div class="hiddenO9">O</div>
     </div>
+    <div class="gameStatusMessage">
+      <div class="playerX currPlayer">X</div>
+      <div class="playerO">O</div>
+    </div>
+
+    <button onclick="changeCurrPlayer()">Click me</button>
   </body>
 </html>
