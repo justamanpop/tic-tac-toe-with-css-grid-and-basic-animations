@@ -3,6 +3,9 @@
 
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(12, 1fr);
+
+  margin: 0;
+  padding: 0;
 }
 
 .ticTacToeSquare1,
@@ -111,7 +114,7 @@
 /* X's that will remain hidden till you click on board, wherein they will become visible and move into position*/
 .moveLeft {
   transition: transform 1s;
-  transform: translateX(-9.2em);
+  transform: translateX(-9.3em);
 }
 
 .hiddenX1,
@@ -177,7 +180,7 @@
 /* O's that will remain hidden till you click on board, wherein they will become visible and move into position*/
 .moveRight {
   transition: transform 1s;
-  transform: translateX(9.2em);
+  transform: translateX(9.1em);
 }
 
 .hiddenO1,
