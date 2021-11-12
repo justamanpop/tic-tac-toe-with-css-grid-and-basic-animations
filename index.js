@@ -165,12 +165,10 @@ function checkGameOver() {
         "ticTacToeSquare" + i.toString()
       )[0].style.cursor = "auto";
     }
-
-    if (!gameState.includes(null)) {
-      isGameOver = true;
-      winner = "tie";
-    }
-
+    changeGameStatusMessage();
+  } else if (!gameState.includes(null)) {
+    isGameOver = true;
+    winner = "tie";
     changeGameStatusMessage();
   }
 }
