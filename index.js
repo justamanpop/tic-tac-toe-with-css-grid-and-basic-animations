@@ -17,6 +17,20 @@ function changeCurrPlayer() {
   }
 }
 
+function makeFlicker(tileNumber1, tileNumber2, tileNumber3) {
+  let className1 = "hidden" + winner + tileNumber1.toString();
+  let className2 = "hidden" + winner + tileNumber2.toString();
+  let className3 = "hidden" + winner + tileNumber3.toString();
+
+  let hiddenElement1 = document.getElementsByClassName(className1)[0];
+  let hiddenElement2 = document.getElementsByClassName(className2)[0];
+  let hiddenElement3 = document.getElementsByClassName(className3)[0];
+
+  hiddenElement1.classList.add("flicker");
+  hiddenElement2.classList.add("flicker");
+  hiddenElement3.classList.add("flicker");
+}
+
 function checkRows() {
   if (
     gameState[0] != null &&
@@ -26,6 +40,7 @@ function checkRows() {
     gameState[1] === gameState[2]
   ) {
     winner = gameState[0];
+    makeFlicker(1, 2, 3);
     return true;
   }
 
@@ -37,6 +52,7 @@ function checkRows() {
     gameState[4] === gameState[5]
   ) {
     winner = gameState[3];
+    makeFlicker(4, 5, 6);
     return true;
   }
 
@@ -48,6 +64,7 @@ function checkRows() {
     gameState[7] === gameState[8]
   ) {
     winner = gameState[6];
+    makeFlicker(7, 8);
     return true;
   }
   return false;
@@ -62,6 +79,7 @@ function checkColumns() {
     gameState[3] === gameState[6]
   ) {
     winner = gameState[0];
+    makeFlicker(1, 4, 7);
     return true;
   }
 
@@ -73,6 +91,7 @@ function checkColumns() {
     gameState[4] === gameState[7]
   ) {
     winner = gameState[1];
+    makeFlicker(2, 5, 8);
     return true;
   }
 
@@ -84,6 +103,7 @@ function checkColumns() {
     gameState[5] === gameState[8]
   ) {
     winner = gameState[2];
+    makeFlicker(3, 6, 9);
     return true;
   }
   return false;
@@ -98,6 +118,7 @@ function checkDiagonals() {
     gameState[4] === gameState[8]
   ) {
     winner = gameState[0];
+    makeFlicker(1, 5, 9);
     return true;
   }
 
@@ -109,6 +130,7 @@ function checkDiagonals() {
     gameState[4] === gameState[6]
   ) {
     winner = gameState[2];
+    makeFlicker(3, 5, 7);
     return true;
   }
   return false;

@@ -238,3 +238,20 @@
   grid-row-start: 4;
   grid-column: 11 / 12;
 }
+
+/* class will define flickering of the row/column/diagonal that caused a player to win*/
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.flicker {
+  animation-name: flicker;
+  animation-duration: 0.75s;
+  animation-iteration-count: 3;
+  animation-delay: 1s;
+}
