@@ -9,11 +9,13 @@
 
 .playerX {
   grid-column: 5 / 6;
+  grid-row: 1;
   justify-self: flex-end;
 }
 
 .playerO {
   grid-column: 7 / 8;
+  grid-row: 1;
   justify-self: flex-start;
 }
 
@@ -29,4 +31,40 @@
   width: 1.2em;
 
   box-shadow: 0 0 5px 5px black;
+}
+
+.gameOverMessage {
+  grid-row: 1;
+  grid-column: 4 / 10;
+
+  word-spacing: 15px;
+  font-size: 55px;
+  font-family: "Mochiy Pop One", sans-serif;
+
+  align-self: flex-start;
+}
+
+.playAgainButton {
+  grid-row: 2;
+  cursor: pointer;
+
+  grid-column: 6 / 8;
+
+  border-radius: 30px;
+
+  background-color: black;
+  color: white;
+
+  font-size: 36px;
+
+  margin: 45px 10px 10px 10px;
+  padding: 8px 16px;
+
+  box-shadow: 0 0 5px 5px black;
+
+  width: max-content;
+
+  align-self: flex-end;
+
+  visibility: hidden;
 }

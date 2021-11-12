@@ -13,10 +13,6 @@ function changeCurrPlayer() {
   }
 }
 
-function changeGameStatusMessage() {
-  console.log("game over");
-}
-
 function checkRows() {
   if (
     gameState[0] != null &&
@@ -114,6 +110,27 @@ function checkDiagonals() {
   return false;
 }
 
+function restartGame() {
+  location.reload();
+}
+
+function changeGameStatusMessage() {
+  document.getElementsByClassName("playerX")[0].style.visibility = "hidden";
+  document.getElementsByClassName("playerO")[0].style.visibility = "hidden";
+
+  let gameOverMessageElement =
+    document.getElementsByClassName("gameOverMessage")[0];
+  let playAgainButtonElement =
+    document.getElementsByClassName("playAgainButton")[0];
+
+  if (winner === "tie") {
+    gameOverMessageElement.innerHTML = "The game is a tie!";
+  } else gameOverMessageElement.innerHTML = winner + " has won the game!";
+
+  gameOverMessageElement.style.visibility = "visible";
+  playAgainButtonElement.style.visibility = "visible";
+}
+
 function checkGameOver() {
   if (checkRows() || checkColumns() || checkDiagonals()) {
     isGameOver = true;
@@ -122,6 +139,12 @@ function checkGameOver() {
         "ticTacToeSquare" + i.toString()
       )[0].style.cursor = "auto";
     }
+
+    if (!gameState.includes(null)) {
+      isGameOver = true;
+      winner = "tie";
+    }
+
     changeGameStatusMessage();
   }
 }
