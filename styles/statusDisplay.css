@@ -68,3 +68,27 @@
 
   visibility: hidden;
 }
+
+.changePlayerButton {
+  grid-row: 2;
+  cursor: pointer;
+
+  grid-column: 6 / 7;
+
+  border-radius: 30px;
+
+  font-size: 36px;
+
+  margin: 45px 10px 10px 10px;
+  padding: 8px 16px;
+
+  /* box-shadow: 0 0 5px 5px magenta; */
+
+  border-style: solid;
+  border-color: lightseagreen;
+
+  width: max-content;
+
+  align-self: flex-end;
+  justify-self: center;
+}

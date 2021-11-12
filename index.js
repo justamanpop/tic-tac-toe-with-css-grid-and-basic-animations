@@ -6,10 +6,14 @@ function changeCurrPlayer() {
     x.classList.remove("currPlayer");
     o.classList.add("currPlayer");
     currPlayer = "O";
+    document.getElementsByClassName("changePlayerButton")[0].innerHTML =
+      "Start with X";
   } else {
     o.classList.remove("currPlayer");
     x.classList.add("currPlayer");
     currPlayer = "X";
+    document.getElementsByClassName("changePlayerButton")[0].innerHTML =
+      "Start with O";
   }
 }
 
@@ -150,6 +154,9 @@ function checkGameOver() {
 }
 
 function tileClicked(tileNumber) {
+  document.getElementsByClassName("changePlayerButton")[0].style.visibility =
+    "hidden";
+
   if (isGameOver || gameState[tileNumber - 1] !== null) return;
 
   let className = "hidden" + currPlayer + tileNumber.toString();
@@ -174,3 +181,8 @@ currPlayer = "X";
 gameState = Array(9).fill(null);
 isGameOver = false;
 winner = null;
+
+window.onload = () => {
+  document.getElementsByClassName("changePlayerButton")[0].innerHTML =
+    "Start with O";
+};
